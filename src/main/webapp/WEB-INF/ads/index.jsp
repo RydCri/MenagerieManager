@@ -26,6 +26,7 @@
     <c:forEach var="ad" items="${ads}">
         <div class="ms-2 col-6">
             <h2>${ad.title}</h2>
+            <img src="${ad.img_url}">
             <p>${ad.description}</p>
             <hr>
         </div>
