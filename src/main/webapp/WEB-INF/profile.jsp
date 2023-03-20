@@ -6,7 +6,9 @@
     </jsp:include>
 </head>
 <body>
-    <jsp:include page="/WEB-INF/partials/userNavbar.jsp" />
+
+<jsp:include page="/WEB-INF/partials/style.jsp"/>
+
 
     <div class="card" style="width: 18rem;">
         <img src="https://cdn.vectorstock.com/i/1000x1000/15/40/blank-profile-picture-image-holder-with-a-crown-vector-42411540.webp" class="card-img-top" alt="...">
