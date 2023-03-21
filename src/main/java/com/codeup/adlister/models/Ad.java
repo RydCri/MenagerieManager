@@ -9,6 +9,7 @@ public class Ad {
     private String gender;
     private double price;
     private int age;
+    private String username; //for findById only
 
 
     public Ad(long id, long userId, String title, String description) {
@@ -50,6 +51,18 @@ public class Ad {
         this.age = age;
     }
 
+    //findById constructor
+
+
+    public Ad(String username, String title, String description, String img_url, String gender, double price, int age) {
+        this.username = username;
+        this.title = title;
+        this.description = description;
+        this.img_url = img_url;
+        this.gender = gender;
+        this.price = price;
+        this.age = age;
+    }
 
     public long getId() {
         return id;
@@ -113,5 +126,41 @@ public class Ad {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+//    @Override
+//    public String toString() {
+//        return "Ad{" +
+//                "id=" + id +
+//                ", userId=" + userId +
+//                ", title='" + title + '\'' +
+//                ", description='" + description + '\'' +
+//                ", img_url='" + img_url + '\'' +
+//                ", gender='" + gender + '\'' +
+//                ", price=" + price +
+//                ", age=" + age +
+//                '}';
+//    }
+
+
+    @Override
+    public String toString() {
+        return "Ad{" +
+                "title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", img_url='" + img_url + '\'' +
+                ", gender='" + gender + '\'' +
+                ", price=" + price +
+                ", age=" + age +
+                ", username='" + username + '\'' +
+                '}';
     }
 }

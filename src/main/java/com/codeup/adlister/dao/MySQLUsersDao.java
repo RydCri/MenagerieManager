@@ -63,4 +63,16 @@ public class MySQLUsersDao implements Users {
         );
     }
 
+    public User getUser(ResultSet rs)
+    {
+        try
+        {
+            return extractUser(rs);
+        }
+        catch (SQLException e)
+        {
+            throw new RuntimeException(e);
+        }
+    }
+
 }
