@@ -78,17 +78,13 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
-    public Ad findById(long adId, long userId)
+    public Ad findById(long adId)
     {
-        String query = "SELECT * FROM users AS u\n" +
-                "JOIN ads AS a\n" +
-                "ON a.id = ? AND (u.id = ? AND a.user_id = ?)";
+        String query = "SELECT * FROM ads WHERE user_id = ?";
         try
         {
             PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
             stmt.setLong(1, adId);
-            stmt.setLong(2, userId);
-            stmt.setLong(3, userId);
             ResultSet rs = stmt.executeQuery();
             Ad userAd = null;
             while (rs.next())
