@@ -29,15 +29,6 @@
 
 </nav><div class="d-flex row col-12">
     <h1 class="col-12 text-center">Adlister</h1>
-
-    <c:forEach var="ad" items="${ads}">
-        <div class="ms-2 col-6">
-            <h2>${ad.title}</h2>
-            <img src="${ad.img_url}">
-            <p>${ad.description}</p>
-            <hr>
-        </div>
-    </c:forEach>
 </div>
 <div class="row">
     <a class="col-12 text-center" href="/ads/create"><strong>Make a new ad</strong></a>
