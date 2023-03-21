@@ -60,6 +60,41 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+    @Override
+    public List<Ad> findById(long num)
+    {
+        String query = "SELECT username, title, description, img_url, gender, price, age FROM users AS u\n" +
+                "JOIN ads AS a\n" +
+                "ON a.user_id = ? AND u.id = ?";
+        try
+        {
+            PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+            stmt.setLong(1, num);
+            stmt.setLong(2, num);
+            ResultSet rs = stmt.executeQuery();
+            List<Ad> userAds = new ArrayList<>();
+            while (rs.next())
+            {
+                         userAds.add(new Ad(
+                                    rs.getString("username"),
+                                    rs.getString("title"),
+                                    rs.getString("description"),
+                                    rs.getString("img_url"),
+                                    rs.getString("gender"),
+                                    rs.getDouble("price"),
+                                    rs.getInt("age")
+
+                            ));
+            }
+
+            return userAds;
+        }
+        catch (SQLException e)
+        {
+            throw new RuntimeException(e);
+        }
+    }
+
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
             rs.getLong("id"),
@@ -79,6 +114,13 @@ public class MySQLAdsDao implements Ads {
             ads.add(extractAd(rs));
         }
         return ads;
+    }
+
+
+
+    public static void main(String[] args)
+    {
+        System.out.println(DaoFactory.getAdsDao().findById(1));
     }
 
 }
