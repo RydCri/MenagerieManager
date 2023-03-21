@@ -61,33 +61,25 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
-    public List<Ad> findById(long num)
+    public Ad findById(long adId, long userId)
     {
-        String query = "SELECT username, title, description, img_url, gender, price, age FROM users AS u\n" +
+        String query = "SELECT * FROM users AS u\n" +
                 "JOIN ads AS a\n" +
-                "ON a.user_id = ? AND u.id = ?";
+                "ON a.id = ? AND (u.id = ? AND a.user_id = ?)";
         try
         {
             PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
-            stmt.setLong(1, num);
-            stmt.setLong(2, num);
+            stmt.setLong(1, adId);
+            stmt.setLong(2, userId);
+            stmt.setLong(3, userId);
             ResultSet rs = stmt.executeQuery();
-            List<Ad> userAds = new ArrayList<>();
+            Ad userAd = null;
             while (rs.next())
             {
-                         userAds.add(new Ad(
-                                    rs.getString("username"),
-                                    rs.getString("title"),
-                                    rs.getString("description"),
-                                    rs.getString("img_url"),
-                                    rs.getString("gender"),
-                                    rs.getDouble("price"),
-                                    rs.getInt("age")
-
-                            ));
+                userAd = extractAd(rs);
             }
 
-            return userAds;
+            return userAd;
         }
         catch (SQLException e)
         {
@@ -120,7 +112,7 @@ public class MySQLAdsDao implements Ads {
 
     public static void main(String[] args)
     {
-        System.out.println(DaoFactory.getAdsDao().findById(1));
+        System.out.println(DaoFactory.getAdsDao().findById(2, 1));
     }
 
 }
