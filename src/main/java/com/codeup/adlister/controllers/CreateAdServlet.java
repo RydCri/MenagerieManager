@@ -45,6 +45,8 @@ public class CreateAdServlet extends HttpServlet {
         DaoFactory.getAdsDao().insert(ad);
         response.sendRedirect("/ads");
 
-//        request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
+
+
+ main
     }
 }
