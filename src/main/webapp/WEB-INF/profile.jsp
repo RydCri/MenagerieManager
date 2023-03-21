@@ -34,18 +34,19 @@
         </div>
     </div>
 
-<%--    <div class="container">--%>
-<%--        <h1>Welcome, ${sessionScope.user.username}!</h1>--%>
-<%--    </div>--%>
+
+<c:forEach var="userAd" items="${userAds}">
+    <div class="ms-2 col-6">
+        <h2>${userAd.title}</h2>
+        <img src="${userAd.img_url}">
+        <p>${userAd.description}</p>
+        <hr>
+    </div>
+</c:forEach>
+
 
 </body>
 </html>
 
 
 <%--//TODO The profile page should display the username and email of the logged-in user and a list of links to all the ads a user has created in the AdLister.&ndash;%&gt;--%>
-
-<%--//TODO When a user logs in the user should be redirected to their profile page.--%>
-<%--done--%>
-
-<%--//TODO The profile view should only be accessible to users that are logged in.--%>
-<%--done--%>
