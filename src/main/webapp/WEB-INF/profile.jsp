@@ -35,16 +35,25 @@
     </div>
 
 
-<c:forEach var="userAd" items="${userAds}">
+<c:forEach var="ad" items="${ads}">
     <div class="ms-2 col-6">
-        <h2>${userAd.title}</h2>
-        <img src="${userAd.img_url}">
-        <p>${userAd.description}</p>
+        <h2>${ad.title}</h2>
+        <img src="${ad.img_url}">
+        <p>${ad.description}</p>
         <hr>
+        <form method="post" action="/ads/delete">
+            <input type="hidden" name="id" value="${ad.id}">
+            <c:if test="${sessionScope.user != null and ad.userId == sessionScope.user.id}">
+                <button type="submit" class="deleteBtn">Delete Post</button>
+            </c:if>
+        </form>
     </div>
 </c:forEach>
 
+<script src="/main/webapp/js/jquery.js"></script>
+<script>
 
+</script>
 </body>
 </html>
 
