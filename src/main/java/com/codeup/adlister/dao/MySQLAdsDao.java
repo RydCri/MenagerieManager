@@ -79,7 +79,9 @@ public class MySQLAdsDao implements Ads {
     @Override
     public Ad findById(long adId)
     {
+
         String query = "SELECT * FROM ads WHERE id = ?";
+
         try
         {
             PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
@@ -139,7 +141,9 @@ public class MySQLAdsDao implements Ads {
 
     public static void main(String[] args)
     {
+
         System.out.println(DaoFactory.getAdsDao().findById(1));
+
     }
 
 }

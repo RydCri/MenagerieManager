@@ -22,7 +22,7 @@ public class CreateAdServlet extends HttpServlet {
             .forward(request, response);
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         User user = (User) request.getSession().getAttribute("user");
 
         String img = request.getParameter("img_url");
@@ -42,9 +42,9 @@ public class CreateAdServlet extends HttpServlet {
                 Integer.parseInt(request.getParameter("age"))
         );
 
-
-
         DaoFactory.getAdsDao().insert(ad);
         response.sendRedirect("/ads");
+
+//        request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
     }
 }
