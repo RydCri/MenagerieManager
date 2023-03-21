@@ -5,20 +5,25 @@ import com.codeup.adlister.util.Password;
 public class User {
     private long id;
     private String username;
+
+    private String gender;
+
     private String email;
     private String password;
 
     public User() {}
 
-    public User(String username, String email, String password) {
+    public User(String username, String gender, String email, String password) {
         this.username = username;
+        this.gender = gender;
         this.email = email;
         setPassword(password);
     }
 
-    public User(long id, String username, String email, String password) {
+    public User(long id, String username, String gender, String email, String password) {
         this.id = id;
         this.username = username;
+        this.gender = gender;
         this.email = email;
         this.password = password;
     }
@@ -37,6 +42,14 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public String getEmail() {

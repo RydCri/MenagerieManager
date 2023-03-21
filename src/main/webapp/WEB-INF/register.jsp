@@ -27,6 +27,14 @@
                 <label for="confirm_password">Confirm Password</label>
                 <input id="confirm_password" name="confirm_password" class="form-control" type="password">
             </div>
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" class="form-control">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="unknown">Other</option>
+                </select>
+            </div>
             <input type="submit" class="btn btn-primary btn-block">
         </form>
     </div>
