@@ -7,11 +7,11 @@
 </head>
 <body>
 
-<jsp:include page="/WEB-INF/partials/style.jsp"/>
 <jsp:include page="/WEB-INF/partials/userNavbar.jsp"/>
+<jsp:include page="/WEB-INF/partials/style.jsp"/>
 
     <div class="card" style="width: 18rem;">
-        <img src="https://cdn.vectorstock.com/i/1000x1000/15/40/blank-profile-picture-image-holder-with-a-crown-vector-42411540.webp" class="card-img-top" alt="...">
+        <img src="https://cdn.vectorstock.com/i/1000x1000/15/40/blank-profile-picture-image-holder-with-a-crown-vector-42411540.webp" class="card-img-top" alt="stock profile image">
         <div class="card-body">
             <h5 class="card-title"><h2>Welcome, ${sessionScope.user.username}!</h2></h5>
         </div>

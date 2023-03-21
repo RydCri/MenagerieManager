@@ -15,4 +15,8 @@
       text-shadow: none;
       color: white !important;
   }
+
+  .card {
+      width: 30rem;
+  }
 </style>
