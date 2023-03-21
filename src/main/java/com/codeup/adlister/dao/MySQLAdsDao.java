@@ -2,7 +2,6 @@ package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Ad;
 import com.codeup.adlister.models.User;
-import com.codeup.adlister.util.Password;
 import com.mysql.cj.jdbc.Driver;
 
 import java.sql.*;
@@ -80,7 +79,9 @@ public class MySQLAdsDao implements Ads {
     @Override
     public Ad findById(long adId)
     {
-        String query = "SELECT * FROM ads WHERE user_id = ?";
+
+        String query = "SELECT * FROM ads WHERE id = ?";
+
         try
         {
             PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
@@ -99,6 +100,8 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException(e);
         }
     }
+
+
 
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
@@ -120,12 +123,27 @@ public class MySQLAdsDao implements Ads {
         }
         return ads;
     }
+    @Override
+    public void deleteAd(Ad ID) {
 
+    try {
+        String query = "DELETE FROM ads WHERE id=?";
+        PreparedStatement preparedStmt = connection.prepareStatement(query);
+        preparedStmt.setLong(1, ID.getId());
 
+        // execute the preparedstatement
+        preparedStmt.execute();
+        preparedStmt.executeUpdate();
+    } catch (Exception e) {
+        throw new RuntimeException(e);
+    }
+}
 
     public static void main(String[] args)
     {
-        System.out.println(DaoFactory.getAdsDao().findById(2));
+
+        System.out.println(DaoFactory.getAdsDao().findById(1));
+
     }
 
 }
