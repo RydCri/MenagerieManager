@@ -31,6 +31,8 @@
     <h1 class="col-12 text-center">Adlister</h1>
 </div>
 <div class="row">
+
+
     <a class="col-12 text-center" href="/ads/create"><strong>Make a new ad</strong></a>
 </div>
 </body>
