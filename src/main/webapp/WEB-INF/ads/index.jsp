@@ -10,7 +10,6 @@
 <jsp:include page="/WEB-INF/partials/style.jsp"/>
 <nav class="navbar navbar-default">
     <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <a class="navbar-brand" href="/ads">Adlister</a>
         </div>
@@ -24,25 +23,29 @@
                 <li><a href="/login" class="m-1">Login</a></li>
             </c:if>
         </ul>
-    </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+    </div>
+</nav>
+<%--<div class="d-flex row col-12">--%>
+<%--    <h1 class="col-12 text-center">Adlister</h1>--%>
+<%--</div>--%>
 
-</nav><div class="d-flex row col-12">
-    <h1 class="col-12 text-center">Adlister</h1>
-
-    <c:forEach var="ad" items="${ads}">
-        <div class="ms-2 col-6">
-            <h2>${ad.title}</h2>
-            <img src="${ad.img_url}">
-            <p>${ad.description}</p>
-            <hr>
+<c:forEach var="ad" items="${ads}">
+    <div class="hero-container">
+        <div class="main-container">
+            <div class="poster-container">
+                <img src="${ad.img_url}" class="poster"/>
+            </div>
+            <div class="ticket-container">
+                <div class="ticket__content">
+                    <h4 class="ticket__movie-title">${ad.title}</h4>
+                </div>
+            </div>
         </div>
-    </c:forEach>
-</div>
-<div class="row">
+    </div>
+</c:forEach>
 
-
-    <a class="col-12 text-center" href="/ads/create"><strong>Make a new ad</strong></a>
-</div>
+<%--<div class="row">--%>
+<%--    <a class="col-12 text-center" href="/ads/create"><strong>Make a new ad</strong></a>--%>
+<%--</div>--%>
 </body>
 </html>
