@@ -1,13 +1,11 @@
 <jsp:include page="/WEB-INF/partials/style.jsp"/>
 
 <nav class="">
-    <div class="container-fluid navicon">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="/ads">Adlister</a>
-        </div>
-        <div class="nav navbar-nav navbar-right flex-row">
-            <a href="/profile" class="m-1">Profile</a>
-            <a href="/logout" class="m-1">Logout</a>
-        </div>
+    <div class="navicon">
     </div><!-- /.navbar-collapse -->
+            <a class="" href="/ads">Adlister</a>
+        <div class="">
+            <a href="/profile" class="">Profile</a>
+            <a href="/logout" class="">Logout</a>
+        </div>
 </nav>
