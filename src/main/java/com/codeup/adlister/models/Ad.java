@@ -51,18 +51,6 @@ public class Ad {
         this.age = age;
     }
 
-    //findById constructor
-
-
-    public Ad(String username, String title, String description, String img_url, String gender, double price, int age) {
-        this.username = username;
-        this.title = title;
-        this.description = description;
-        this.img_url = img_url;
-        this.gender = gender;
-        this.price = price;
-        this.age = age;
-    }
 
     public long getId() {
         return id;
