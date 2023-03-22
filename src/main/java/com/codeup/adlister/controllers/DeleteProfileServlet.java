@@ -29,7 +29,7 @@ public class DeleteProfileServlet extends HttpServlet
         if(user != null && user.getId() == DaoFactory.getUsersDao().findByUsername(user.getUsername()).getId()) {
             DaoFactory.getUsersDao().deleteUser(user);
             request.getSession().invalidate();
-            response.sendRedirect("/ads");
+            response.sendRedirect("/logout");
         }
     }
 }
