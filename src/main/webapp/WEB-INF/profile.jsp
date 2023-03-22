@@ -52,13 +52,13 @@
                 </form>
             </div>
             <div class="ticket__content">
-        <form method="get" action="/ads/edit">
-            <input type="hidden" name="id" value="${ad.id}">
-            <c:if test="${sessionScope.user != null and ad.userId == sessionScope.user.id}">
-                <button type="submit" class="ticket__buy-btn">Edit Post</button>
-            </c:if>
-        </form>
-        </div>
+                <form method="get" action="/ads/edit">
+                    <input type="hidden" name="id" value="${ad.id}">
+                    <c:if test="${sessionScope.user != null and ad.userId == sessionScope.user.id}">
+                        <button type="submit" class="ticket__buy-btn">Edit Post</button>
+                    </c:if>
+                </form>
+            </div>
         </div>
     </div>
 </div>

@@ -8,7 +8,6 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/style.jsp"/>
-<jsp:include page="/WEB-INF/partials/navStyle.jsp"/>
 <nav>
     <div class="navicon">
     </div>

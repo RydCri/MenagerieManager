@@ -1,6 +1,8 @@
 package com.codeup.adlister.dao;
 
+import com.codeup.adlister.models.Ad;
 import com.codeup.adlister.models.User;
+import com.codeup.adlister.util.Password;
 import com.mysql.cj.jdbc.Driver;
 
 import java.sql.*;
@@ -51,6 +53,49 @@ public class MySQLUsersDao implements Users {
             throw new RuntimeException("Error creating new user", e);
         }
     }
+    @Override
+    public void deleteUser(User user)
+    {
+        try {
+            String query = "DELETE FROM users WHERE id=?";
+            PreparedStatement preparedStmt = connection.prepareStatement(query);
+            preparedStmt.setLong(1, user.getId());
+
+            // execute the preparedstatement
+            preparedStmt.execute();
+            preparedStmt.executeUpdate();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void editUser(User user)
+    {
+        String query = """
+                UPDATE users 
+                SET username = ?, gender = ?,
+                email = ?, password = ?
+                WHERE id = ? 
+                """;
+        try
+        {
+
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, user.getUsername());
+            stmt.setString(2, user.getGender());
+            stmt.setString(3, user.getEmail());
+            stmt.setString(4, user.getPassword());
+            stmt.setLong(5, user.getId());
+
+            stmt.executeUpdate();
+
+        }
+        catch (SQLException e)
+        {
+            throw new RuntimeException(e);
+        }
+    }
 
     private User extractUser(ResultSet rs) throws SQLException {
         if (! rs.next()) {
@@ -76,5 +121,17 @@ public class MySQLUsersDao implements Users {
             throw new RuntimeException(e);
         }
     }
+
+
+    public static void main(String[] args)
+    {
+        User user = new User(1, "test", "unknown", "test@email.com", Password.hash("password"));
+
+//        DaoFactory.getUsersDao().findByUsername("Yimothy");
+//        DaoFactory.getUsersDao().deleteUser(DaoFactory.getUsersDao().findByUsername("Yimothy"));
+        DaoFactory.getUsersDao().editUser(user);
+
+    }
+
 
 }
