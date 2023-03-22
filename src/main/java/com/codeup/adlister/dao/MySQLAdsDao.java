@@ -64,7 +64,7 @@ public class MySQLAdsDao implements Ads {
             stmt.setString(4, ad.getImg_url());
             stmt.setString(5, ad.getGender());
             stmt.setDouble(6, ad.getPrice());
-            stmt.setInt(7, ad.getAge());
+            stmt.setInt(7, ad.getAge()); // maybe change later to String type
 
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
@@ -112,7 +112,7 @@ public class MySQLAdsDao implements Ads {
             rs.getString("img_url"),
             rs.getString("gender"),
             rs.getDouble("price"),
-            rs.getInt("age")
+            rs.getInt("age")// maybe change later to String type
         );
     }
 
@@ -138,6 +138,38 @@ public class MySQLAdsDao implements Ads {
         throw new RuntimeException(e);
     }
 }
+
+    @Override
+    public void editAd(Ad ad)
+    {
+        String query = """
+                UPDATE ads 
+                SET title = ?,
+                description = ?,
+                img_url = ?,
+                gender = ?,
+                price = ?,
+                age = ?
+                WHERE id = ? 
+                """;
+        try
+        {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, ad.getTitle());
+            stmt.setString(2, ad.getDescription());
+            stmt.setString(3, ad.getImg_url());
+            stmt.setString(4, ad.getGender());
+            stmt.setDouble(5, ad.getPrice());
+            stmt.setInt(6, ad.getAge()); // maybe change later to String type
+            stmt.setLong(7, ad.getId());
+
+
+        }
+        catch (SQLException e)
+        {
+            throw new RuntimeException(e);
+        }
+    }
 
     public static void main(String[] args)
     {

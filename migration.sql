@@ -20,8 +20,8 @@ CREATE TABLE ads (
     description TEXT NOT NULL,
     img_url VARCHAR(300) NOT NULL, #MAYBE ADD DEFAULT STATE IF NO IMG ADDED
     gender VARCHAR(20) NOT NULL,
-    price DECIMAL(10, 2), # 12,345,678.90
-    age VARCHAR(128),
+    price DECIMAL(10, 2) NOT NULL, # 12,345,678.90
+    age VARCHAR(128) NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES users(id)
         ON DELETE CASCADE

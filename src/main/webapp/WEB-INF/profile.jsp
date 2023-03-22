@@ -41,12 +41,20 @@
         <img src="${ad.img_url}">
         <p>${ad.description}</p>
         <hr>
-        <form method="post" action="/ads/delete">
+<%--        <form method="post" action="/ads/delete">--%>
+<%--            <input type="hidden" name="id" value="${ad.id}">--%>
+<%--            <c:if test="${sessionScope.user != null and ad.userId == sessionScope.user.id}">--%>
+<%--                <button type="submit" class="deleteBtn">Delete Post</button>--%>
+<%--            </c:if>--%>
+<%--        </form>--%>
+
+        <form method="post" action="/ads/edit">
             <input type="hidden" name="id" value="${ad.id}">
             <c:if test="${sessionScope.user != null and ad.userId == sessionScope.user.id}">
-                <button type="submit" class="deleteBtn">Delete Post</button>
+                <button type="submit" class="editBtn">Edit Post</button>
             </c:if>
         </form>
+
     </div>
 </c:forEach>
 
