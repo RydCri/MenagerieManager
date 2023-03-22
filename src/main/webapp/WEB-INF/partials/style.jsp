@@ -2,38 +2,48 @@
     html {
         background-image: linear-gradient(90deg,midnightblue,mediumvioletred);
     }
+
     body {
         font-family: Damascus sans-serif;
         color:white;
         text-shadow:1px 2px 0 black;
-  }
-  h1 h2{
-    text-align: center;
-  }
-  .navbar {
+    }
+
+    h1 h2{
+      text-align: center;
+    }
+
+    a {
+        padding: 0 !important;
+    }
+    .navbar {
       background:black;
-  }
-  .navbar a {
+    }
+
+    .navbar a {
       text-shadow: none;
       color: white !important;
-  }
+    }
 
-  .card {
+    .card {
       width: 30rem;
-  }
+    }
 
-  .Male {
+    .Male {
       color:blue;
-  }
-  .Female {
+    }
+
+    .Female {
       color:deeppink;
-  }
-  .NA {
+    }
+
+    .NA {
       color: #8889;
-  }
-  .idk {
+    }
+
+    .idk {
       color: forestgreen;
-  }
+    }
 
     /*ad cards*/
     @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
@@ -72,13 +82,14 @@
     }
 
     .poster {
+        height: 220px;
         width: 100%;
         box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.6);
     }
 
 
     .ticket-container {
-        background: #fff;
+        background-image: linear-gradient(90deg,midnightblue,mediumvioletred);
         width: 270px;
         padding-top: 230px;
         display: flex;
@@ -151,7 +162,7 @@
 
     .ticket__content {
         width: 100%;
-        padding: 0 15px;
+        padding: 0;
         position: relative;
         bottom: 0;
         text-align: center;
@@ -166,14 +177,14 @@
     }
 
     .ticket__movie-slogan {
-        color: lightseagreen;
+        color: #94f4ee;
         font-size: 1rem;
         margin-bottom: 20px;
         list-style: none;
     }
 
     .ticket__current-price {
-        color: #69c982;
+        color: #fc3c3c;
         font-size: 1.4rem;
         font-weight: bold;
     }
@@ -181,19 +192,14 @@
     .ticket__buy-btn {
         cursor: pointer;
         width: 100%;
-        background: #2f2f2f;
+        background: #864e9f;
         color: white;
         padding: 15px 0;
         font-size: 1rem;
         font-weight: bold;
         text-transform: uppercase;
         border: 0;
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
+        opacity: 90%;
     }
-
-
-
-
 
 </style>
