@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>Welcome</title>
+    <jsp:include page="/WEB-INF/partials/favicon.jsp"></jsp:include>
     <!--	Carme font-->
     <link href='https://fonts.googleapis.com/css?family=Carme' rel='stylesheet'>
     <!--	Materialize Icons-->
