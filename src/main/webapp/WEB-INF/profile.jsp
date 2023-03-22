@@ -35,6 +35,7 @@
     </div>
 
 <c:forEach var="ad" items="${ads}">
+
 <div class="hero-container">
     <div class="main-container">
         <div class="poster-container">
@@ -51,6 +52,27 @@
                 </form>
             </div>
         </div>
+
+    <div class="ms-2 col-6">
+        <h2>${ad.title}</h2>
+        <img src="${ad.img_url}">
+        <p>${ad.description}</p>
+        <hr>
+        <form method="post" action="/ads/delete">
+            <input type="hidden" name="id" value="${ad.id}">
+            <c:if test="${sessionScope.user != null and ad.userId == sessionScope.user.id}">
+                <button type="submit" class="deleteBtn">Delete Post</button>
+            </c:if>
+        </form>
+
+        <form method="get" action="/ads/edit">
+            <input type="hidden" name="id" value="${ad.id}">
+            <c:if test="${sessionScope.user != null and ad.userId == sessionScope.user.id}">
+                <button type="submit" class="editBtn">Edit Post</button>
+            </c:if>
+        </form>
+
+
     </div>
 </div>
 </c:forEach>

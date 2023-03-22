@@ -64,7 +64,7 @@ public class MySQLAdsDao implements Ads {
             stmt.setString(4, ad.getImg_url());
             stmt.setString(5, ad.getGender());
             stmt.setDouble(6, ad.getPrice());
-            stmt.setInt(7, ad.getAge());
+            stmt.setInt(7, ad.getAge()); // maybe change later to String type
 
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
@@ -76,6 +76,9 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+
+
+    // FIND BY ID
     @Override
     public Ad findById(long adId)
     {
@@ -101,8 +104,6 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
-
-
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
             rs.getLong("id"),
@@ -112,7 +113,7 @@ public class MySQLAdsDao implements Ads {
             rs.getString("img_url"),
             rs.getString("gender"),
             rs.getDouble("price"),
-            rs.getInt("age")
+            rs.getInt("age")// maybe change later to String type
         );
     }
 
@@ -123,6 +124,8 @@ public class MySQLAdsDao implements Ads {
         }
         return ads;
     }
+
+    // DELETE AD METHOD
     @Override
     public void deleteAd(Ad ID) {
 
@@ -139,8 +142,55 @@ public class MySQLAdsDao implements Ads {
     }
 }
 
+
+    // EDIT AD METHOD
+    @Override
+    public void editAd(Ad ad)
+    {
+        String query = """
+                UPDATE ads 
+                SET title = ?, description = ?,
+                img_url = ?, gender = ?,
+                price = ?, age = ?
+                WHERE id = ? 
+                """;
+        try
+        {
+            String img = ad.getImg_url();
+
+            if(img.isEmpty())
+            {
+                img = "https://core.trac.wordpress.org/raw-attachment/ticket/45927/placeholder-image-portrait.png";
+            }
+
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, ad.getTitle());
+            stmt.setString(2, ad.getDescription());
+            stmt.setString(3, img);
+            stmt.setString(4, ad.getGender());
+            stmt.setDouble(5, ad.getPrice());
+            stmt.setInt(6, ad.getAge()); // maybe change later to String type
+            stmt.setLong(7, ad.getId());
+
+            stmt.executeUpdate();
+
+        }
+        catch (SQLException e)
+        {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+
+    // TESTING THE METHODS
     public static void main(String[] args)
     {
+        Ad ad = new Ad(1,1, "Test","test desc", "", "female", 123, 1);
+
+        System.out.println(DaoFactory.getAdsDao().findById(1));
+
+        DaoFactory.getAdsDao().editAd(ad);
 
         System.out.println(DaoFactory.getAdsDao().findById(1));
 

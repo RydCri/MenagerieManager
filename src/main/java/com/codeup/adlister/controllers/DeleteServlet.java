@@ -14,6 +14,16 @@ import java.io.IOException;
 @WebServlet(name="DeleteServlet", urlPatterns = "/ads/delete")
 public class DeleteServlet extends HttpServlet {
     @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        User currentUser = (User) request.getSession().getAttribute("user");
+        if(currentUser != null){
+            response.sendRedirect("/ads");
+        }else {
+            response.sendRedirect("/login");
+        }
+    }
+
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         Long adId = Long.parseLong(request.getParameter("id"));
         User currentUser = (User) request.getSession().getAttribute("user");
