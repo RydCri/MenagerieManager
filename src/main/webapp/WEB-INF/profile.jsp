@@ -48,7 +48,7 @@
 <%--            </c:if>--%>
 <%--        </form>--%>
 
-        <form method="post" action="/ads/edit">
+        <form method="get" action="/ads/edit">
             <input type="hidden" name="id" value="${ad.id}">
             <c:if test="${sessionScope.user != null and ad.userId == sessionScope.user.id}">
                 <button type="submit" class="editBtn">Edit Post</button>

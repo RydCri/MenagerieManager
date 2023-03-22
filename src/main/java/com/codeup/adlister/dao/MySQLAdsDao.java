@@ -76,6 +76,9 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+
+
+    // FIND BY ID
     @Override
     public Ad findById(long adId)
     {
@@ -101,8 +104,6 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
-
-
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
             rs.getLong("id"),
@@ -123,6 +124,8 @@ public class MySQLAdsDao implements Ads {
         }
         return ads;
     }
+
+    // DELETE AD METHOD
     @Override
     public void deleteAd(Ad ID) {
 
@@ -139,6 +142,8 @@ public class MySQLAdsDao implements Ads {
     }
 }
 
+
+    // EDIT AD METHOD
     @Override
     public void editAd(Ad ad)
     {
@@ -176,6 +181,9 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+
+
+    // TESTING THE METHODS
     public static void main(String[] args)
     {
         Ad ad = new Ad(1,1, "Test","test desc", "", "female", 123, 1);
