@@ -37,14 +37,6 @@ public class EditAdServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
 
-//        long adId = Long.parseLong(request.getParameter("id"));
-//        User user = (User) request.getSession().getAttribute("user");
-//
-//        Ad ad = DaoFactory.getAdsDao().findById(adId);
-
-//        String title = ad.getTitle();
-//        request.setAttribute("title", title);
-
         String img = request.getParameter("img_url");
         if(img.isEmpty())
         {
