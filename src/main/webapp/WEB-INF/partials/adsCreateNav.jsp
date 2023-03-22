@@ -1,7 +1,7 @@
 <jsp:include page="/WEB-INF/partials/style.jsp"/>
 
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
+<nav class="">
+    <div class="container-fluid navicon">
         <div class="navbar-header">
             <a class="navbar-brand" href="/ads">Adlister</a>
         </div>

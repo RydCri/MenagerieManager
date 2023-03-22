@@ -5,9 +5,9 @@
         <div class="">
             <a class="" href="/ads">Adlister</a>
         </div>
-        <div class="nav navbar-nav navbar-right flex-row">
-            <a href="/ads/create" class="m-1">Create New Ad!</a>
-            <a href="/logout" class="m-1">Logout</a>
+        <div class="">
+            <a href="/ads/create" class="">Create New Ad!</a>
+            <a href="/logout" class="">Logout</a>
         </div>
     </div><!-- /.navbar-collapse -->
 </nav>

@@ -25,6 +25,11 @@
     transition: -webkit-clip-path 0.5625s, clip-path 0.375s;
   }
 
+  li
+  {
+      list-style: none;
+  }
+
   nav:hover {
     -webkit-transition-timing-function: ease-out;
     transition-timing-function: ease-out;
