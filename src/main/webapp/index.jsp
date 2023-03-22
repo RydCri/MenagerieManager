@@ -2,25 +2,33 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Welcome to my site!" />
-    </jsp:include>
+    <title>Welcome</title>
+    <!--	Carme font-->
+    <link href='https://fonts.googleapis.com/css?family=Carme' rel='stylesheet'>
+    <!--	Materialize Icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 <body>
-<jsp:include page="/WEB-INF/partials/style.jsp"/>
-    <div class="container">
-    <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-        <h1>Welcome to the Adlister!</h1>
+<div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper black white-text">
+            <a href="#!" class="brand-logo">Adlister</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="/login">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<h1>Welcome to the Adlister!</h1>
 
-        <c:forEach items="ads" var="ea">
-        <div>${ads}</div>
-            <form method="post" action="/ads/delete">
-                <input type="hidden" name="id" value="${ads.id}">
-                    <c:if test="${sessionScope.user != null and ads.userId == sessionScope.user.id}">
-                        <button type="submit" class="deleteBtn">Delete Button</button>
-                    </c:if>
-            </form>
-        </c:forEach>
-    </div>
+
+</div>
+<!--materialize js-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+
+</script>
 </body>
 </html>
