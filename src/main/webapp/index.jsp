@@ -13,8 +13,8 @@
 <body>
 <div class="navbar-fixed">
     <nav>
-        <div class="nav-wrapper black white-text">
-            <a href="#!" class="brand-logo">Adlister</a>
+        <div class="nav-wrapper white-text">
+            <a href="/ads" class="brand-logo">Adlister</a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="/login">Login</a></li>
             </ul>
