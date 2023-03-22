@@ -16,7 +16,11 @@
   /*}*/
 
   nav {
-    width: 300px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      width: 300px;
+
     background: white;
     color: rgba(0, 0, 0, 0.87);
     -webkit-clip-path: circle(24px at 30px 24px);

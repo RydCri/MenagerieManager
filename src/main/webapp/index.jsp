@@ -8,8 +8,8 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/style.jsp"/>
-    <jsp:include page="/WEB-INF/partials/navbar.jsp" />
     <div class="container">
+    <jsp:include page="/WEB-INF/partials/navbar.jsp" />
         <h1>Welcome to the Adlister!</h1>
 
         <c:forEach items="ads" var="ea">

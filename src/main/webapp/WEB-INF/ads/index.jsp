@@ -8,22 +8,20 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/style.jsp"/>
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="/ads">Adlister</a>
-        </div>
-        <ul class="nav navbar-nav navbar-right flex-row">
+<jsp:include page="/WEB-INF/partials/navStyle.jsp"/>
+<nav>
+    <div class="navicon">
+    </div>
+            <a class="" href="/ads">Adlister</a>
             <c:if test="${sessionScope.user != null}">
-                <li><a href="/profile" class="m-1">Profile</a></li>
-                <li><a href="/ads/create" class="m-1">Create New Ads!</a></li>
-                <li><a href="/logout" class="m-1">Logout</a></li>
+                <a href="/profile" class="">Profile</a>
+                <a href="/ads/create" class="">Create New Ads!</a>
+                <a href="/logout" class="">Logout</a>
             </c:if>
             <c:if test="${sessionScope.user == null}">
-                <li><a href="/login" class="m-1">Login</a></li>
+                <a href="/login" class="">Login</a>
             </c:if>
         </ul>
-    </div>
 </nav>
 <%--<div class="d-flex row col-12">--%>
 <%--    <h1 class="col-12 text-center">Adlister</h1>--%>
