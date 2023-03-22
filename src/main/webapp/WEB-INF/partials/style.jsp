@@ -5,8 +5,7 @@
     body {
         font-family: Damascus sans-serif;
         color:white;
-        text-shadow: 1px 1px 3px black;
-        background-image: linear-gradient(90deg,midnightblue,mediumvioletred);
+        text-shadow:1px 2px 0 black;
   }
   h1 h2{
     text-align: center;
@@ -74,8 +73,9 @@
 
     .poster {
         width: 100%;
-        box-shadow: 0 5px 20px 3px rgba(0, 0, 0, 0.6);
+        box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.6);
     }
+
 
     .ticket-container {
         background: #fff;
@@ -88,7 +88,7 @@
         border-radius: 5px;
         position: absolute;
         top: 20px;
-        box-shadow: 0 5px 20px 3px rgba(0, 0, 0, 0.6);
+        box-shadow: 0 5px 2px 0 rgba(0, 0, 0, 0.6);
         opacity: 0;
     }
 
@@ -155,17 +155,21 @@
         position: relative;
         bottom: 0;
         text-align: center;
+        background-image: linear-gradient(90deg,midnightblue,mediumvioletred);
+
     }
 
     .ticket__movie-title {
         text-transform: uppercase;
+        color:lightskyblue;
         margin-bottom: 5px;
     }
 
     .ticket__movie-slogan {
-        color: #999;
-        font-size: 0.9rem;
+        color: lightseagreen;
+        font-size: 1rem;
         margin-bottom: 20px;
+        list-style: none;
     }
 
     .ticket__current-price {
@@ -174,7 +178,7 @@
         font-weight: bold;
     }
 
-    #ticket__buy-btn {
+    .ticket__buy-btn {
         cursor: pointer;
         width: 100%;
         background: #2f2f2f;
