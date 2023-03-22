@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 <body>
+<jsp:include page="/WEB-INF/partials/cursors.jsp"></jsp:include>
 <div class="navbar-fixed">
     <nav>
         <div class="nav-wrapper white-text">
