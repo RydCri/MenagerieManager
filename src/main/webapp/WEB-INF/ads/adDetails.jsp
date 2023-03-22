@@ -30,9 +30,12 @@
                 <div class="ticket__content">
                     <h4 class="ticket__movie-title">${ad.title}</h4>
                     <div class="ticket__movie-slogan">
-                        <li>Description: ${ad.description}</li>
-                        <li>Gender: ${ad.gender}</li>
-                        <li>Age: ${ad.age}</li>
+                        <br>
+                        <li><strong>Description:</strong> ${ad.description}</li>
+                        <br>
+                        <li><strong>Gender:</strong> ${ad.gender}</li>
+                        <br>
+                        <li><strong>Age:</strong> ${ad.age}</li>
                     </div>
                     <p class="ticket__current-price">$${ad.price}</p>
                 </div>
