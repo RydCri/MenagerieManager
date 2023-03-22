@@ -1,3 +1,4 @@
+
 <%--
   Created by IntelliJ IDEA.
   User: lexibor
@@ -10,13 +11,16 @@
 <html>
 <head>
     <title>Edit ad</title>
+
 </head>
 <body>
+<jsp:include page="/WEB-INF/partials/style.jsp"/>
+<jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
 <form action="/ads/edit" method="post">
     <div class="form-group">
         <label for="title">Title</label>
-        <input id="title" name="title" class="form-control" type="text" value="${title}">
+        <input id="title" name="title" class="form-control" type="text">
     </div>
     <div class="form-group">
         <label for="description">Description</label>

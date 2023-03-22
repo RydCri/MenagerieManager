@@ -144,25 +144,30 @@ public class MySQLAdsDao implements Ads {
     {
         String query = """
                 UPDATE ads 
-                SET title = ?,
-                description = ?,
-                img_url = ?,
-                gender = ?,
-                price = ?,
-                age = ?
+                SET title = ?, description = ?,
+                img_url = ?, gender = ?,
+                price = ?, age = ?
                 WHERE id = ? 
                 """;
         try
         {
+            String img = ad.getImg_url();
+
+            if(img.isEmpty())
+            {
+                img = "https://core.trac.wordpress.org/raw-attachment/ticket/45927/placeholder-image-portrait.png";
+            }
+
             PreparedStatement stmt = connection.prepareStatement(query);
             stmt.setString(1, ad.getTitle());
             stmt.setString(2, ad.getDescription());
-            stmt.setString(3, ad.getImg_url());
+            stmt.setString(3, img);
             stmt.setString(4, ad.getGender());
             stmt.setDouble(5, ad.getPrice());
             stmt.setInt(6, ad.getAge()); // maybe change later to String type
             stmt.setLong(7, ad.getId());
 
+            stmt.executeUpdate();
 
         }
         catch (SQLException e)
@@ -173,6 +178,11 @@ public class MySQLAdsDao implements Ads {
 
     public static void main(String[] args)
     {
+        Ad ad = new Ad(1,1, "Test","test desc", "", "female", 123, 1);
+
+        System.out.println(DaoFactory.getAdsDao().findById(1));
+
+        DaoFactory.getAdsDao().editAd(ad);
 
         System.out.println(DaoFactory.getAdsDao().findById(1));
 
