@@ -34,8 +34,25 @@
         </div>
     </div>
 
-
 <c:forEach var="ad" items="${ads}">
+
+<div class="hero-container">
+    <div class="main-container">
+        <div class="poster-container">
+            <a href="/adDetails"><img src="${ad.img_url}" class="poster" /></a>
+        </div>
+        <div class="ticket-container">
+            <div class="ticket__content">
+                <h4 class="ticket__movie-title">${ad.title}</h4>
+                <form method="post" action="/ads/delete">
+                    <input type="hidden" name="id" value="${ad.id}">
+                    <c:if test="${sessionScope.user != null and ad.userId == sessionScope.user.id}">
+                        <button id="ticket__buy-btn" type="submit" class="deleteBtn">Delete Post</button>
+                    </c:if>
+                </form>
+            </div>
+        </div>
+
     <div class="ms-2 col-6">
         <h2>${ad.title}</h2>
         <img src="${ad.img_url}">
@@ -55,15 +72,15 @@
             </c:if>
         </form>
 
+
     </div>
+</div>
 </c:forEach>
+
+</body>
 
 <script src="/main/webapp/js/jquery.js"></script>
 <script>
 
 </script>
-</body>
 </html>
-
-
-<%--//TODO The profile page should display the username and email of the logged-in user and a list of links to all the ads a user has created in the AdLister.&ndash;%&gt;--%>
