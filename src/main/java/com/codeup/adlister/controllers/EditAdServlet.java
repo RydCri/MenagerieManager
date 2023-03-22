@@ -11,6 +11,10 @@ import java.io.IOException;
 
 @WebServlet("/ads/edit")
 public class EditAdServlet extends HttpServlet {
+    long adId;
+    User user;
+    Ad ad;
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
@@ -19,34 +23,27 @@ public class EditAdServlet extends HttpServlet {
             response.sendRedirect("/login");
             return;
         }
-//        long adId = Long.parseLong(request.getParameter("id"));
-        User user = (User) request.getSession().getAttribute("user");
-//
-//        Ad ad = DaoFactory.getAdsDao().findById(adId);
-//
-//        String title = ad.getTitle();
-//        request.setAttribute("title", title);
+        adId = Long.parseLong(request.getParameter("id"));
+        user = (User) request.getSession().getAttribute("user");
 
-//        request.setAttribute("ads", DaoFactory.getAdsDao().all());
+        ad = DaoFactory.getAdsDao().findById(adId);
 
+        System.out.println(adId);
+        System.out.println(ad.getTitle());
         request.getRequestDispatcher("/WEB-INF/ads/editAd.jsp").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
-        request.getRequestDispatcher("/WEB-INF/ads/editAd.jsp").forward(request, response);
 
-        long adId = Long.parseLong(request.getParameter("id"));
-        User user = (User) request.getSession().getAttribute("user");
+//        long adId = Long.parseLong(request.getParameter("id"));
+//        User user = (User) request.getSession().getAttribute("user");
+//
+//        Ad ad = DaoFactory.getAdsDao().findById(adId);
 
-        Ad ad = DaoFactory.getAdsDao().findById(adId);
-
-        System.out.println(adId);
-        System.out.println(ad.getTitle());
-
-        String title = ad.getTitle();
-        request.setAttribute("title", title);
+//        String title = ad.getTitle();
+//        request.setAttribute("title", title);
 
         String img = request.getParameter("img_url");
         if(img.isEmpty())
