@@ -1,10 +1,11 @@
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
+<jsp:include page="/WEB-INF/partials/navStyle.jsp"/>
+<nav class="">
+    <div class="container-fluid navicon">
         <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <a class="navbar-brand" href="/ads">Adlister</a>
+        <div class="">
+            <a class="" href="/ads">Adlister</a>
         </div>
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="">
             <li><a href="/login">Login</a></li>
         </ul>
     </div><!-- /.navbar-collapse -->
