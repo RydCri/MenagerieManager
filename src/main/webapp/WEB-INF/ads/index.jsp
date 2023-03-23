@@ -3,8 +3,6 @@
 <html>
 <head>
     <title>Viewing Ads</title>
-    <!-- Compiled and minified CSS -->
-    <%--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">--%>
     <jsp:include page="/WEB-INF/partials/favicon.jsp"></jsp:include>
     <jsp:include page="/WEB-INF/partials/head.jsp"></jsp:include>
 
@@ -244,7 +242,7 @@
                                 <div class="ticket__content">
                                     <h4>${ad.title}</h4>
                                     <hr>
-                                    <h4>${ad.description} ...view more</h4>
+                                    <h4>${ad.description}</h4>
                                 </div>
                             </div>
                         </div>
