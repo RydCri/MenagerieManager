@@ -10,7 +10,6 @@
 <style>
 
     html,body {
-        height: 100vh;
         background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
         cursor:url(../icons/cursor_gauntlet_blue.png), auto;
         overflow-x: hidden;
