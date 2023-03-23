@@ -9,7 +9,6 @@
     <jsp:include page="/WEB-INF/partials/cursors.jsp"></jsp:include>
     <jsp:include page="/WEB-INF/partials/menagerieStyle.jsp"></jsp:include>
 
-
 </head>
 <body>
 
