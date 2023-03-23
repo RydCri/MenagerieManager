@@ -231,23 +231,6 @@
         </ul>
     </div><!-- /.navbar-collapse -->
 </nav>
-
-
-
-<%--<c:forEach var="ad" items="${ads}">--%>
-<%--    <div class="hero-container">--%>
-<%--        <div class="main-container">--%>
-<%--            <div class="poster-container">--%>
-<%--                <img src="${ad.img_url}" class="poster"/>--%>
-<%--            </div>--%>
-<%--            <div class="ticket-container">--%>
-<%--                <div class="ticket__content">--%>
-<%--                    <h4 class="ticket__movie-title">${ad.title}</h4>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-<%--</c:forEach>--%>
 <div class="container">
 
     <div class="row">
