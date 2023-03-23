@@ -5,6 +5,14 @@
   <jsp:include page="/WEB-INF/partials/head.jsp">
     <jsp:param name="title" value="Your Profile" />
   </jsp:include>
+
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="../materialize/css/materialize.min.css"  media="screen,projection"/>
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/userNavbar.jsp" />
@@ -44,16 +52,51 @@
     <input type="submit" class="btn btn-primary btn-block">
   </form>
 
-      <form method="post" action="/deleteProfile">
+<%--      <form method="post" action="/deleteProfile">--%>
+<%--        <input type="hidden" name="id" value="${sessionScope.user.id}">--%>
+<%--        <c:if test="${sessionScope.user != null}">--%>
+<%--          <button class="" type="submit">Delete Profile</button>--%>
+<%--        </c:if>--%>
+<%--      </form>--%>
+
+  <!-- Modal Trigger -->
+  <button data-target="modal1" class="btn modal-trigger">Modal</button>
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <button class="modal-action modal-close waves-effect waves-red btn-flat" ><a href="profile">Disagree</a></button>
+      <form action="/deleteProfile" method="post">
         <input type="hidden" name="id" value="${sessionScope.user.id}">
         <c:if test="${sessionScope.user != null}">
-          <button class="" type="submit">Delete Profile</button>
+<%--          <button class="" type="submit">Delete Profile</button>--%>
+          <button type="submit" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</button>
         </c:if>
       </form>
-
     </div>
+  </div>
 
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../materialize/js/materialize.min.js"></script>
+  <script>
+    (function ($) {
+      $(function () {
 
+        //initialize all modals
+        $('.modal').modal();
 
+        //now you can open modal from code
+        // $('#modal1').modal('open');
+
+        //or by click on trigger
+        $('.trigger-modal').modal();
+
+      }); // end of document ready
+    })(jQuery); // end of jQuery name space
+  </script>
 </body>
 </html>
