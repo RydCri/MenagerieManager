@@ -7,11 +7,10 @@
 <%--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">--%>
 <jsp:include page="/WEB-INF/partials/favicon.jsp"></jsp:include>
 <jsp:include page="/WEB-INF/partials/head.jsp"></jsp:include>
-</head>
 
 <body>
 <jsp:include page="/WEB-INF/partials/cursors.jsp"></jsp:include>
-<body>
+
 <style>
     :root {
         --clr-one: rgb(255, 20, 147);
@@ -101,9 +100,10 @@
     }
 
     .poster {
-        height: 220px;
+        height: 250px;
         width: 100%;
         box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.6);
+        border-radius: 25px;
     }
 
 
@@ -236,21 +236,40 @@
 
 
 
+<%--<c:forEach var="ad" items="${ads}">--%>
+<%--    <div class="hero-container">--%>
+<%--        <div class="main-container">--%>
+<%--            <div class="poster-container">--%>
+<%--                <img src="${ad.img_url}" class="poster"/>--%>
+<%--            </div>--%>
+<%--            <div class="ticket-container">--%>
+<%--                <div class="ticket__content">--%>
+<%--                    <h4 class="ticket__movie-title">${ad.title}</h4>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--    </div>--%>
+<%--</c:forEach>--%>
+<div class="container">
+
+    <div class="row">
 <c:forEach var="ad" items="${ads}">
-    <div class="hero-container">
-        <div class="main-container">
-            <div class="poster-container">
-                <img src="${ad.img_url}" class="poster"/>
-            </div>
-            <div class="ticket-container">
-                <div class="ticket__content">
-                    <h4 class="ticket__movie-title">${ad.title}</h4>
+        <div class="col-sm-4">
+            <div class="hero-container">
+            <div class="main-container">
+                <div class="poster-container">
+                    <img src="${ad.img_url}" class="poster"/>
+                </div>
+                <div class="ticket-container">
+                    <div class="ticket__content">
+                        <h4 class="ticket__movie-title">${ad.title}</h4>
+                    </div>
                 </div>
             </div>
-        </div>
+    </div>
     </div>
 </c:forEach>
-
-
+</div>
+</div>
 </body>
 </html>
