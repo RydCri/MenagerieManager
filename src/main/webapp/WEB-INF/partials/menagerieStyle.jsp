@@ -182,6 +182,11 @@
         text-align: center;
     }
 
+    .ad_content {
+        text-align: center;
+        padding-top: 20em;
+    }
+
     .ticket__movie-title {
         text-transform: uppercase;
         color:lightskyblue;

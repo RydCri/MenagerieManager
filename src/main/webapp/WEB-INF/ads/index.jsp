@@ -38,7 +38,9 @@
                     <div class="hero-container">
                         <div class="main-container">
                             <div class="poster-container">
-                                <img src="${ad.img_url}" class="poster"/>
+                                <a href="/adDetails?id=${ad.id}">
+                                    <img src="${ad.img_url}" class="poster"/>
+                                </a>
                                 <div class="ticket-container">
                                     <div class="ticket__content">
                                         <h4>${ad.title}</h4>
@@ -53,6 +55,7 @@
             </c:forEach>
         </div>
     </div>
+
 
 </body>
 </html>
