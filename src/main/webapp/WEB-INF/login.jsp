@@ -1,11 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Please Log In" />
-    </jsp:include>
-</head>
+    <title>Login~</title>
+    <jsp:include page="/WEB-INF/partials/favicon.jsp"></jsp:include>
+
+<jsp:include page="/WEB-INF/partials/head.jsp"></jsp:include>
 <body>
+<jsp:include page="/WEB-INF/partials/cursors.jsp"></jsp:include>
 <style>
     :root {
         --clr-one: rgb(255, 20, 147);
