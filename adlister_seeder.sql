@@ -19,3 +19,4 @@ INSERT INTO ads (user_id, title, description, img_url, gender, price, age) VALUE
 (1, 'Loch Ness Monster', 'Nessy', 'https://ichef.bbci.co.uk/news/1024/cpsprodpb/4B11/production/_107971291_nessie.jpg', 'female', 35000, 59),
 (1, 'Goblin', 'George', 'https://m.economictimes.com/thumb/msid-96020437,width-1200,height-900,resizemode-4,imgsize-45162/goblin-mode-canva.jpg', 'male', 2000, 26);
 
+

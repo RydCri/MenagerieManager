@@ -1,4 +1,6 @@
 <style>
+    @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+
     html {
         background-image: linear-gradient(90deg,midnightblue,mediumvioletred);
     }
@@ -46,7 +48,6 @@
     }
 
     /*ad cards*/
-    @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
 
     * {
         box-sizing: border-box;
@@ -146,19 +147,6 @@
             transform: scaleX(1);
         }
     }
-
-    /* @keyframes bounce {
-      50% {
-        opacity: 1;
-        transform: scale(1.1);
-      }
-
-      100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-    } */
-
 
     .ticket__content {
         width: 100%;

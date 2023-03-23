@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>Welcome</title>
+    <jsp:include page="/WEB-INF/partials/favicon.jsp"></jsp:include>
     <!--	Carme font-->
     <link href='https://fonts.googleapis.com/css?family=Carme' rel='stylesheet'>
     <!--	Materialize Icons-->
@@ -11,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 <body>
+<jsp:include page="/WEB-INF/partials/cursors.jsp"></jsp:include>
 <div class="navbar-fixed">
     <nav>
         <div class="nav-wrapper white-text">
