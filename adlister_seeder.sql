@@ -17,6 +17,8 @@ INSERT INTO ads (user_id, title, description, img_url, gender, price, age) VALUE
 (1, 'Lion', 'Ralph', 'https://thumbs.dreamstime.com/b/portrait-lion-black-detail-face-lion-hight-quality-portrait-lion-portrait-animal-portrait-lion-black-detail-145612151.jpg" ','male', 790, 22 ),
 (1, 'Kraken', 'Veronica', 'https://static.wikia.nocookie.net/powerlisting/images/c/c5/King_Kraken.jpg/revision/latest?cb=20220616094322', 'female', 3000, 45),
 (1, 'Loch Ness Monster', 'Nessy', 'https://ichef.bbci.co.uk/news/1024/cpsprodpb/4B11/production/_107971291_nessie.jpg', 'female', 35000, 59),
-(1, 'Goblin', 'George', 'https://m.economictimes.com/thumb/msid-96020437,width-1200,height-900,resizemode-4,imgsize-45162/goblin-mode-canva.jpg', 'male', 2000, 26);
+(1, 'Goblin', 'George', 'https://m.economictimes.com/thumb/msid-96020437,width-1200,height-900,resizemode-4,imgsize-45162/goblin-mode-canva.jpg', 'male', 2000, 26),
+(1, 'Sasquatch', 'Bigfoot', 'https://img.freepik.com/free-vector/realistic-hand-drawn-bigfoot-sasquatch-illustration_23-2148864487.jpg?w=1060', 'unknown', 9.99, 150),
+(1, 'Duck', 'Howard', 'https://upload.wikimedia.org/wikipedia/en/c/ca/Howard_the_Duck_screenshot.jpg', 'male', 1000, 64);
 
 
