@@ -4,9 +4,9 @@
 <head>
     <title>Viewing Ads</title>
     <!-- Compiled and minified CSS -->
-<%--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">--%>
-<jsp:include page="/WEB-INF/partials/favicon.jsp"></jsp:include>
-<jsp:include page="/WEB-INF/partials/head.jsp"></jsp:include>
+    <%--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">--%>
+    <jsp:include page="/WEB-INF/partials/favicon.jsp"></jsp:include>
+    <jsp:include page="/WEB-INF/partials/head.jsp"></jsp:include>
 
 <body>
 <jsp:include page="/WEB-INF/partials/cursors.jsp"></jsp:include>
@@ -110,16 +110,18 @@
 
 
     .ticket-container {
-        background-image: linear-gradient(90deg,midnightblue,mediumvioletred);
+        background: transparent;
         width: 270px;
-        padding-top: 230px;
+        padding-top: -10px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: end;
-        border-radius: 5px;
         position: absolute;
-        top: 20px;
+        border-radius: 33px;
+        position: absolute;
+        top: 0px;
+        left: -6px;
         box-shadow: 0 5px 2px 0 rgba(0, 0, 0, 0.6);
         opacity: 0;
     }
@@ -169,13 +171,7 @@
     }
 
     .ticket__content {
-        width: 100%;
-        padding: 0;
-        position: relative;
-        bottom: 0;
         text-align: center;
-        background-image: linear-gradient(90deg,midnightblue,mediumvioletred);
-
     }
 
     .ticket__movie-title {
@@ -255,24 +251,25 @@
 <div class="container">
 
     <div class="row">
-<c:forEach var="ad" items="${ads}">
-        <div class="col-sm-4">
-            <div class="hero-container">
-            <div class="main-container">
-                <h4 class="ticket__movie-title">${ad.title}</h4>
-                <div class="poster-container">
-                    <img src="${ad.img_url}" class="poster"/>
-                <div class="ticket-container">
-                    <div class="ticket__content">
-                        <h4>${ad.description} ...view more</h4>
+        <c:forEach var="ad" items="${ads}">
+            <div class="col-sm-4">
+                <div class="hero-container">
+                    <div class="main-container">
+                        <div class="poster-container">
+                            <img src="${ad.img_url}" class="poster"/>
+                            <div class="ticket-container">
+                                <div class="ticket__content">
+                                    <h4>${ad.title}</h4>
+                                    <hr>
+                                    <h4>${ad.description} ...view more</h4>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                </div>
             </div>
+        </c:forEach>
     </div>
-    </div>
-</c:forEach>
-</div>
 </div>
 </body>
 </html>
