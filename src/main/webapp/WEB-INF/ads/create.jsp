@@ -1,7 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-
+    <!-- Compiled and minified CSS -->
+<%--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">--%>
     <jsp:include page="/WEB-INF/partials/favicon.jsp"></jsp:include>
     <jsp:include page="/WEB-INF/partials/head.jsp"></jsp:include>
     <jsp:include page="/WEB-INF/partials/cursors.jsp"></jsp:include>
@@ -53,8 +54,7 @@
                 <label for="img_url">IMG URL</label>
                 <textarea id="img_url" name="img_url" class="form-control" type="url"></textarea>
             </div>
-            <button class="btn waves-effect waves-light right align-right" type="submit" name="action">Submit
-                <i class="material-icons">send</i>
+            <button class="btn waves-effect waves-light right align-right blue lighten-3" style="background: cyan!important;" type="submit" name="action">Submit
             </button>
         </form>
     </div>

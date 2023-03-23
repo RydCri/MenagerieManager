@@ -4,6 +4,8 @@
 <head>
 
     <title>Edited Profile</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <jsp:include page="/WEB-INF/partials/favicon.jsp"></jsp:include>
     <jsp:include page="/WEB-INF/partials/head.jsp"></jsp:include>
     <jsp:include page="/WEB-INF/partials/cursors.jsp"></jsp:include>
@@ -58,7 +60,7 @@
 
     <hr>
 
-    <button data-target="modal1" class="btn modal-trigger deep-purple lighten-1  hoverable">Delete Profile</button>
+    <button data-target="modal1" class="btn modal-trigger deep-purple lighten-1  hoverable" style="background: orangered!important;">Delete Profile</button>
 
     <div id="modal1" class="modal modal-fixed-footer deep-purple lighten-4 blue-grey-text text-darken-4" style="max-height: 20em">
         <div class="modal-content deep-purple lighten-4">
