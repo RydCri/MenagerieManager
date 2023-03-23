@@ -49,31 +49,29 @@
         <option value="unknown">Other</option>
       </select>
     </div>
-    <input type="submit" class="btn btn-primary btn-block">
+    <br>
+    <input type="submit" class="btn btn-primary btn-block deep-purple lighten-1">
   </form>
 
-<%--      <form method="post" action="/deleteProfile">--%>
-<%--        <input type="hidden" name="id" value="${sessionScope.user.id}">--%>
-<%--        <c:if test="${sessionScope.user != null}">--%>
-<%--          <button class="" type="submit">Delete Profile</button>--%>
-<%--        </c:if>--%>
-<%--      </form>--%>
+  <hr>
 
   <!-- Modal Trigger -->
-  <button data-target="modal1" class="btn modal-trigger">Modal</button>
+  <button data-target="modal1" class="btn modal-trigger deep-purple lighten-1  hoverable">Delete Profile</button>
   <!-- Modal Structure -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
+  <div id="modal1" class="modal modal-fixed-footer deep-purple lighten-4 blue-grey-text text-darken-4" style="max-height: 20em">
+    <div class="modal-content deep-purple lighten-4">
+      <h4 class="">Are you sure you wish to delete your profile?</h4>
+      <p class="">This action will also delete all of your posted ads...</p>
     </div>
-    <div class="modal-footer">
-      <button class="modal-action modal-close waves-effect waves-red btn-flat" ><a href="profile">Disagree</a></button>
-      <form action="/deleteProfile" method="post">
+    <div class="modal-footer deep-purple lighten-4">
+      <form action="profile">
+        <button type="submit" class="modal-action modal-close waves-effect waves-red btn-flat hoverable" >No</button>
+      </form>
+      <form method="post" action="/deleteProfile">
         <input type="hidden" name="id" value="${sessionScope.user.id}">
         <c:if test="${sessionScope.user != null}">
 <%--          <button class="" type="submit">Delete Profile</button>--%>
-          <button type="submit" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</button>
+          <button type="submit" class="modal-action modal-close waves-effect waves-green btn-flat hoverable">Yes</button>
         </c:if>
       </form>
     </div>

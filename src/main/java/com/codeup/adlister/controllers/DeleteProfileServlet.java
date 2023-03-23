@@ -11,10 +11,11 @@ import java.io.IOException;
 @WebServlet("/deleteProfile")
 public class DeleteProfileServlet extends HttpServlet
 {
-    User user;
+    User user ;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
+        System.out.println("get");
          user = (User) request.getSession().getAttribute("user");
         if(user != null){
             response.sendRedirect("/ads");
@@ -26,6 +27,8 @@ public class DeleteProfileServlet extends HttpServlet
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
+        user = (User) request.getSession().getAttribute("user");
+        System.out.println("post");
         if(user != null && user.getId() == DaoFactory.getUsersDao().findByUsername(user.getUsername()).getId()) {
             DaoFactory.getUsersDao().deleteUser(user);
             request.getSession().invalidate();
