@@ -84,26 +84,28 @@
         display: flex;
     }
 
+
     .main-container {
-        width: 270px;
-        height: 540px;
+        height: 263px;
         position: relative;
-        margin: 0 20px;
+        margin: 10px 10px 10px 15px;
     }
 
     .poster-container {
-        width: 230px;
+        width: 250px;
         position: absolute;
-        top: 0;
-        left: 20px;
-        z-index: 9999;
+        top: 10px;
+        left:10px;
+        z-index:10;
+        border-radius: 24px;
     }
 
     .poster {
         height: 250px;
         width: 100%;
-        box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.6);
-        border-radius: 25px;
+        box-shadow: 3px 1px 11px 0px rgba(0, 200, 0, 0.6), -3px -1px 11px 0px rgba(200,0,0,.6);
+        border-radius: 35px;
+        z-index: 9;
     }
 
 
@@ -257,13 +259,14 @@
         <div class="col-sm-4">
             <div class="hero-container">
             <div class="main-container">
+                <h4 class="ticket__movie-title">${ad.title}</h4>
                 <div class="poster-container">
                     <img src="${ad.img_url}" class="poster"/>
-                </div>
                 <div class="ticket-container">
                     <div class="ticket__content">
-                        <h4 class="ticket__movie-title">${ad.title}</h4>
+                        <h4>${ad.description} ...view more</h4>
                     </div>
+                </div>
                 </div>
             </div>
     </div>
