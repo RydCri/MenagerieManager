@@ -19,10 +19,6 @@
 
 <div class="container">
   <h1>Edit your profile below ${sessionScope.user.username}!</h1>
-<%--TODO ADD IMAGE UPLOAD--%>
-<%--TODO CHANGE CONTACT INFO--%>
-<%--TODO ADD STATUS {LOOKING TO ADOPT/FOSTER/SALE}--%>
-
 
   <form action="/edit-profile" method="post">
     <div class="form-group">

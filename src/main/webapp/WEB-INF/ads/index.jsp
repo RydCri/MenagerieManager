@@ -211,6 +211,7 @@
     .card {
         width: 30rem;
     }
+
 </style>
 <nav class="navbar navbar-default" style="flex-direction: row!important;">
     <div class="container-fluid">

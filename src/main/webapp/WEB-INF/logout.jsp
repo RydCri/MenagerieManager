@@ -1,8 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%
-//    request.getSession().removeAttribute("user");
-//    request.getSession().invalidate();
-%>
 <html>
 <head>
     <title>~LoggedOut~</title>
@@ -78,7 +74,7 @@
         <ul class="nav navbar-nav navbar-right">
             <li><a href="/login">Login</a></li>
         </ul>
-    </div><!-- /.navbar-collapse -->
+    </div>
 </nav>
 <h1 style="text-align: center">You have been logged out</h1>
 <br><br>

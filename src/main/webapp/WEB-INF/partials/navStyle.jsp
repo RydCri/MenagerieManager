@@ -1,20 +1,5 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: lexibor
-  Date: 3/22/23
-  Time: 1:47 PM
-  To change this template use File | Settings | File Templates.
---%>
 <style>
   @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
-  /*body {*/
-  /*  font: 100% Roboto, sans-serif;*/
-  /*  !*background: url(http://wallpapercave.com/wp/aZlqiAT.png) 50% 50% no-repeat;*!*/
-  /*  background-size: cover;*/
-  /*  padding: 50px;*/
-  /*  margin: 0;*/
-  /*}*/
-
   nav {
       display: flex;
       flex-direction: row;

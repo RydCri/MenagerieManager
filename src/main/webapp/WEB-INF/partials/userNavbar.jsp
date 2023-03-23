@@ -2,7 +2,7 @@
 <jsp:include page="/WEB-INF/partials/navStyle.jsp"/>
 <nav class="">
     <div class="navicon">
-    </div><!-- /.navbar-collapse -->
+    </div>
             <a class="" href="/ads">Adlister</a>
         <div class="">
             <a href="/ads/create" class="">Create New Ad!</a>
