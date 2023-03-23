@@ -284,6 +284,10 @@
     }
 
 
+    <br><br>
+    <h1 style="text-align: center">Welcome to The Menagerie!</h1>
+
+
 </style>
 <img id="moon" src="./img/moon.png">
 <!--Page Wrapper-->
@@ -341,6 +345,7 @@
         }, 15000);
     })
 </script>
+
 
 </body>
 </html>
