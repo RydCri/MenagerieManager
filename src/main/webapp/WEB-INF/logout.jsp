@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    request.getSession().removeAttribute("user");
-    request.getSession().invalidate();
+//    request.getSession().removeAttribute("user");
+//    request.getSession().invalidate();
 %>
 <html>
 <head>
