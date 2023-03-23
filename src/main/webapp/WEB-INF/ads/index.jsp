@@ -28,7 +28,7 @@
                     <li><a href="/login" class="">Login</a></li>
                 </c:if>
             </ul>
-        </div><!-- /.navbar-collapse -->
+        </div>
     </nav>
 
     <div class="container">
